@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -40,13 +40,8 @@
         }
 
         @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-15px);
-            }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
         }
 
         header h1 {
@@ -78,31 +73,31 @@
             overflow: hidden;
         }
 
-            .card::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                height: 1px;
-                background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.3), transparent);
-            }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.3), transparent);
+        }
 
-            .card:hover {
-                transform: translateY(-8px);
-                box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 180, 216, 0.1);
-                border-color: rgba(0, 180, 216, 0.2);
-            }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 180, 216, 0.1);
+            border-color: rgba(0, 180, 216, 0.2);
+        }
 
-            .card h2 {
-                font-size: 26px;
-                margin-bottom: 25px;
-                color: #00d4ff;
-                display: flex;
-                align-items: center;
-                gap: 12px;
-                font-weight: 600;
-            }
+        .card h2 {
+            font-size: 26px;
+            margin-bottom: 25px;
+            color: #00d4ff;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+        }
 
         /* Version Box */
         .version-box {
@@ -145,20 +140,20 @@
             overflow: hidden;
         }
 
-            .btn::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-                transition: left 0.5s;
-            }
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
 
-            .btn:hover::before {
-                left: 100%;
-            }
+        .btn:hover::before {
+            left: 100%;
+        }
 
         .btn-primary {
             background: linear-gradient(135deg, #0077b6 0%, #00d4ff 100%);
@@ -166,10 +161,10 @@
             box-shadow: 0 10px 40px rgba(0, 119, 182, 0.4);
         }
 
-            .btn-primary:hover {
-                transform: translateY(-3px);
-                box-shadow: 0 20px 50px rgba(0, 119, 182, 0.5);
-            }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 50px rgba(0, 119, 182, 0.5);
+        }
 
         .btn-secondary {
             background: rgba(255, 255, 255, 0.1);
@@ -177,35 +172,35 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-            .btn-secondary:hover {
-                background: rgba(255, 255, 255, 0.15);
-                border-color: rgba(0, 212, 255, 0.5);
-            }
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(0, 212, 255, 0.5);
+        }
 
         /* Features List */
         .features {
             list-style: none;
         }
 
-            .features li {
-                padding: 18px 0;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-                font-size: 17px;
-                display: flex;
-                align-items: center;
-                gap: 18px;
-                transition: all 0.3s ease;
-            }
+        .features li {
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 17px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            transition: all 0.3s ease;
+        }
 
-                .features li:hover {
-                    padding-left: 10px;
-                    background: rgba(255, 255, 255, 0.02);
-                    border-radius: 8px;
-                }
+        .features li:hover {
+            padding-left: 10px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+        }
 
-                .features li:last-child {
-                    border-bottom: none;
-                }
+        .features li:last-child {
+            border-bottom: none;
+        }
 
         .feature-icon {
             width: 48px;
@@ -226,37 +221,37 @@
             counter-reset: step;
         }
 
-            .steps li {
-                counter-increment: step;
-                padding: 25px 0 25px 80px;
-                position: relative;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-                font-size: 16px;
-                line-height: 1.7;
-            }
+        .steps li {
+            counter-increment: step;
+            padding: 25px 0 25px 80px;
+            position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 16px;
+            line-height: 1.7;
+        }
 
-                .steps li:last-child {
-                    border-bottom: none;
-                }
+        .steps li:last-child {
+            border-bottom: none;
+        }
 
-                .steps li::before {
-                    content: counter(step);
-                    position: absolute;
-                    left: 0;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    background: linear-gradient(135deg, #0077b6 0%, #00d4ff 100%);
-                    color: white;
-                    width: 50px;
-                    height: 50px;
-                    border-radius: 14px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-size: 20px;
-                    font-weight: 700;
-                    box-shadow: 0 8px 20px rgba(0, 119, 182, 0.3);
-                }
+        .steps li::before {
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #0077b6 0%, #00d4ff 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 700;
+            box-shadow: 0 8px 20px rgba(0, 119, 182, 0.3);
+        }
 
         /* Code */
         code {
@@ -298,17 +293,9 @@
         }
 
         @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(42, 157, 143, 0.7);
-            }
-
-            70% {
-                box-shadow: 0 0 0 20px rgba(42, 157, 143, 0);
-            }
-
-            100% {
-                box-shadow: 0 0 0 0 rgba(42, 157, 143, 0);
-            }
+            0% { box-shadow: 0 0 0 0 rgba(42, 157, 143, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(42, 157, 143, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(42, 157, 143, 0); }
         }
 
         /* Table */
@@ -318,40 +305,40 @@
             margin-top: 10px;
         }
 
-            .versions-table th,
-            .versions-table td {
-                padding: 20px;
-                text-align: left;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            }
+        .versions-table th,
+        .versions-table td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
 
-            .versions-table th {
-                color: #00d4ff;
-                font-weight: 600;
-                font-size: 14px;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-            }
+        .versions-table th {
+            color: #00d4ff;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-            .versions-table td {
-                font-size: 16px;
-            }
+        .versions-table td {
+            font-size: 16px;
+        }
 
-            .versions-table a {
-                color: #2a9d8f;
-                text-decoration: none;
-                font-weight: 600;
-                padding: 8px 20px;
-                background: rgba(42, 157, 143, 0.1);
-                border-radius: 8px;
-                transition: all 0.3s ease;
-                border: 1px solid rgba(42, 157, 143, 0.3);
-            }
+        .versions-table a {
+            color: #2a9d8f;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 20px;
+            background: rgba(42, 157, 143, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(42, 157, 143, 0.3);
+        }
 
-                .versions-table a:hover {
-                    background: rgba(42, 157, 143, 0.2);
-                    transform: translateY(-2px);
-                }
+        .versions-table a:hover {
+            background: rgba(42, 157, 143, 0.2);
+            transform: translateY(-2px);
+        }
 
         /* Footer */
         footer {
@@ -362,10 +349,10 @@
             color: #8892b0;
         }
 
-            footer p {
-                margin: 12px 0;
-                font-size: 15px;
-            }
+        footer p {
+            margin: 12px 0;
+            font-size: 15px;
+        }
 
         .contact {
             color: #00d4ff;
@@ -374,34 +361,18 @@
             transition: all 0.3s ease;
         }
 
-            .contact:hover {
-                text-decoration: underline;
-                color: #2a9d8f;
-            }
+        .contact:hover {
+            text-decoration: underline;
+            color: #2a9d8f;
+        }
 
         /* Responsive */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 36px;
-            }
-
-            .version {
-                font-size: 48px;
-            }
-
-            .card {
-                padding: 25px;
-            }
-
-            .steps li {
-                padding-left: 60px;
-            }
-
-                .steps li::before {
-                    width: 40px;
-                    height: 40px;
-                    font-size: 16px;
-                }
+            header h1 { font-size: 36px; }
+            .version { font-size: 48px; }
+            .card { padding: 25px; }
+            .steps li { padding-left: 60px; }
+            .steps li::before { width: 40px; height: 40px; font-size: 16px; }
         }
 
         /* Loading Animation */
@@ -416,9 +387,7 @@
         }
 
         @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
+            to { transform: rotate(360deg); }
         }
     </style>
 </head>
@@ -437,9 +406,10 @@
             <div class="version" id="current-version">v1.0.0</div>
             <div class="date">Released: March 7, 2025</div>
 
-            <a href="SecureVault.exe" class="btn btn-primary" download>
+            <!-- New Download Button -->
+            <button class="btn btn-primary" onclick="openPlatformSelect()">
                 ⬇ Download Latest Version
-            </a>
+            </button>
 
             <div class="status-box">
                 <div class="status-online">
@@ -453,30 +423,12 @@
         <div class="card">
             <h2>✨ What's New</h2>
             <ul class="features">
-                <li>
-                    <span class="feature-icon">🎨</span>
-                    Modern, clean interface with smooth animations
-                </li>
-                <li>
-                    <span class="feature-icon">🔢</span>
-                    Secure PIN pad login system
-                </li>
-                <li>
-                    <span class="feature-icon">🗄️</span>
-                    Three vault categories: Apps, Photos, Videos
-                </li>
-                <li>
-                    <span class="feature-icon">➕</span>
-                    Easy add/remove items with file browser
-                </li>
-                <li>
-                    <span class="feature-icon">⚙️</span>
-                    Settings panel with code change option
-                </li>
-                <li>
-                    <span class="feature-icon">🔄</span>
-                    Built-in update checker
-                </li>
+                <li><span class="feature-icon">🎨</span> Modern, clean interface with smooth animations</li>
+                <li><span class="feature-icon">🔢</span> Secure PIN pad login system</li>
+                <li><span class="feature-icon">🗄️</span> Three vault categories: Apps, Photos, Videos</li>
+                <li><span class="feature-icon">➕</span> Easy add/remove items with file browser</li>
+                <li><span class="feature-icon">⚙️</span> Settings panel with code change option</li>
+                <li><span class="feature-icon">🔄</span> Built-in update checker</li>
             </ul>
         </div>
 
@@ -513,18 +465,9 @@
         <div class="card">
             <h2>💻 System Requirements</h2>
             <ul class="features">
-                <li>
-                    <span class="feature-icon">🪟</span>
-                    Windows 10 or Windows 11
-                </li>
-                <li>
-                    <span class="feature-icon">💾</span>
-                    50 MB free disk space
-                </li>
-                <li>
-                    <span class="feature-icon">🌐</span>
-                    Internet connection (for updates only)
-                </li>
+                <li><span class="feature-icon">🪟</span> Windows 10 or Windows 11</li>
+                <li><span class="feature-icon">💾</span> 50 MB free disk space</li>
+                <li><span class="feature-icon">🌐</span> Internet connection (for updates only)</li>
             </ul>
         </div>
 
@@ -536,14 +479,49 @@
         </footer>
     </div>
 
+    <!-- Platform Selection Popup -->
+    <div id="platformPopup" style="
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:rgba(0,0,0,0.8);
+        display:none;
+        align-items:center;
+        justify-content:center;
+        z-index:9999;
+    ">
+        <div style="
+            background:#1a1a2e;
+            padding:40px;
+            border-radius:20px;
+            text-align:center;
+            max-width:400px;
+            width:90%;
+            border:1px solid rgba(255,255,255,0.1);
+        ">
+            <h2 style="margin-bottom:25px;">Select Your Platform</h2>
+            <button onclick="downloadWindows()" class="btn btn-secondary" style="width:100%; margin-bottom:15px;">🪟 Windows (.exe)</button>
+            <button onclick="downloadAndroid()" class="btn btn-secondary" style="width:100%;">📱 Android (.apk)</button>
+            <br><br>
+            <button onclick="closePopup()" style="background:none; border:none; color:#aaa; cursor:pointer; margin-top:10px;">Cancel</button>
+        </div>
+    </div>
+
     <!-- Auto-fetch version from version.txt -->
-    <script>fetch('version.txt')
+    <script>
+        fetch('version.txt')
             .then(response => response.text())
             .then(version => {
                 document.getElementById('current-version').textContent = 'v' + version.trim();
             })
-            .catch(() => {
-                console.log('Using default version 1.0.0');
-            });</script>
+            .catch(() => { console.log('Using default version 1.0.0'); });
+
+        function openPlatformSelect(){ document.getElementById("platformPopup").style.display = "flex"; }
+        function closePopup(){ document.getElementById("platformPopup").style.display = "none"; }
+        function downloadWindows(){ window.location.href = "SecureVault.exe"; }
+        function downloadAndroid(){ window.location.href = "SecureVault.apk"; }
+    </script>
 </body>
 </html>
