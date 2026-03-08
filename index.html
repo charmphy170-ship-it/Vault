@@ -1,205 +1,320 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secure Vault - Updates</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
-            color: #ffffff; min-height: 100vh; line-height: 1.6;
-        }
-        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secure Vault - Updates</title>
 
-        header { text-align: center; margin-bottom: 50px; padding: 40px 0; }
-        .logo { font-size: 100px; margin-bottom: 20px; animation: float 3s ease-in-out infinite; filter: drop-shadow(0 10px 30px rgba(0, 180, 216, 0.3)); }
-        @keyframes float { 0%,100%{transform:translateY(0);}50%{transform:translateY(-15px);} }
-        header h1 {
-            font-size: 52px; font-weight: 800;
-            background: linear-gradient(135deg, #00d4ff 0%, #0077b6 50%, #023e8a 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            margin-bottom: 10px; letter-spacing: -1px;
-        }
-        header p { color: #8892b0; font-size: 20px; font-weight: 300; }
+<style>
 
-        .card {
-            background: rgba(255,255,255,0.03); border-radius: 24px; padding: 40px;
-            margin-bottom: 30px; border: 1px solid rgba(255,255,255,0.08);
-            backdrop-filter: blur(20px); transition: all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
-            position: relative; overflow: hidden;
-        }
-        .card::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background: linear-gradient(90deg,transparent,rgba(0,212,255,0.3),transparent); }
-        .card:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(0,0,0,0.4), 0 0 40px rgba(0,180,216,0.1); border-color: rgba(0,180,216,0.2); }
-        .card h2 { font-size:26px; margin-bottom:25px; color:#00d4ff; display:flex; align-items:center; gap:12px; font-weight:600; }
+*{margin:0;padding:0;box-sizing:border-box;}
 
-        .version-box { text-align:center; padding:50px 30px; background: linear-gradient(135deg, rgba(0,119,182,0.1) 0%, rgba(42,157,143,0.1) 100%); }
-        .version { font-size:72px; font-weight:800; background: linear-gradient(135deg,#00d4ff 0%,#2a9d8f 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:10px; line-height:1; }
-        .date { color:#8892b0; font-size:16px; margin-bottom:35px; font-weight:400; }
+body{
+font-family:'Segoe UI',Tahoma,Verdana,sans-serif;
+background:linear-gradient(135deg,#0a0a0f 0%,#1a1a2e 50%,#16213e 100%);
+color:#fff;
+min-height:100vh;
+line-height:1.6;
+}
 
-        .btn {
-            display:inline-flex; align-items:center; gap:12px; padding:20px 50px; border-radius:14px;
-            text-decoration:none; font-weight:700; font-size:18px; transition:all 0.3s ease;
-            border:none; cursor:pointer; position:relative; overflow:hidden;
-        }
-        .btn::before {
-            content:''; position:absolute; top:0; left:-100%; width:100%; height:100%;
-            background: linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent); transition:left 0.5s;
-        }
-        .btn:hover::before { left:100%; }
-        .btn-primary { background: linear-gradient(135deg,#0077b6 0%,#00d4ff 100%); color:white; box-shadow:0 10px 40px rgba(0,119,182,0.4); }
-        .btn-primary:hover { transform:translateY(-3px); box-shadow:0 20px 50px rgba(0,119,182,0.5); }
-        .btn-secondary { background: rgba(255,255,255,0.1); color:white; border:1px solid rgba(255,255,255,0.2); }
-        .btn-secondary:hover { background: rgba(255,255,255,0.15); border-color: rgba(0,212,255,0.5); }
+.container{
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+}
 
-        .features { list-style:none; }
-        .features li { padding:18px 0; border-bottom:1px solid rgba(255,255,255,0.05); font-size:17px; display:flex; align-items:center; gap:18px; transition: all 0.3s ease; }
-        .features li:hover { padding-left:10px; background: rgba(255,255,255,0.02); border-radius:8px; }
-        .features li:last-child { border-bottom:none; }
-        .feature-icon { width:48px; height:48px; background: linear-gradient(135deg, rgba(0,119,182,0.2)0%, rgba(0,212,255,0.2)100%); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:24px; flex-shrink:0; border:1px solid rgba(0,212,255,0.2); }
+header{
+text-align:center;
+margin-bottom:50px;
+}
 
-        .steps { list-style:none; counter-reset: step; }
-        .steps li { counter-increment: step; padding:25px 0 25px 80px; position:relative; border-bottom:1px solid rgba(255,255,255,0.05); font-size:16px; line-height:1.7; }
-        .steps li:last-child { border-bottom:none; }
-        .steps li::before {
-            content: counter(step); position:absolute; left:0; top:50%; transform:translateY(-50%);
-            background: linear-gradient(135deg,#0077b6 0%,#00d4ff 100%); color:white; width:50px; height:50px;
-            border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:20px; font-weight:700;
-            box-shadow:0 8px 20px rgba(0,119,182,0.3);
-        }
+.logo{
+font-size:100px;
+margin-bottom:20px;
+}
 
-        code { background: rgba(0,212,255,0.1); padding:4px 12px; border-radius:6px; font-family:'Courier New', monospace; font-size:14px; color:#00d4ff; border:1px solid rgba(0,212,255,0.2); }
+header h1{
+font-size:52px;
+font-weight:800;
+background:linear-gradient(135deg,#00d4ff,#0077b6,#023e8a);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
 
-        .status-box { background: rgba(42,157,143,0.1); border:1px solid rgba(42,157,143,0.3); border-radius:16px; padding:25px; text-align:center; margin-top:30px; }
-        .status-online { color:#2a9d8f; font-weight:600; display:flex; align-items:center; justify-content:center; gap:12px; font-size:16px; }
-        .pulse { width:12px; height:12px; background:#2a9d8f; border-radius:50%; animation:pulse 2s infinite; }
-        @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(42,157,143,0.7);}70%{box-shadow:0 0 0 20px rgba(42,157,143,0);}100%{box-shadow:0 0 0 0 rgba(42,157,143,0);} }
+header p{
+color:#8892b0;
+font-size:20px;
+}
 
-        .versions-table { width:100%; border-collapse:collapse; margin-top:10px; }
-        .versions-table th, .versions-table td { padding:20px; text-align:left; border-bottom:1px solid rgba(255,255,255,0.08); }
-        .versions-table th { color:#00d4ff; font-weight:600; font-size:14px; text-transform:uppercase; letter-spacing:1px; }
-        .versions-table td { font-size:16px; }
-        .versions-table a { color:#2a9d8f; text-decoration:none; font-weight:600; padding:8px 20px; background: rgba(42,157,143,0.1); border-radius:8px; transition:all 0.3s ease; border:1px solid rgba(42,157,143,0.3); }
-        .versions-table a:hover { background: rgba(42,157,143,0.2); transform:translateY(-2px); }
+.card{
+background:rgba(255,255,255,0.03);
+border-radius:24px;
+padding:40px;
+margin-bottom:30px;
+border:1px solid rgba(255,255,255,0.08);
+backdrop-filter:blur(20px);
+}
 
-        footer { text-align:center; margin-top:60px; padding-top:40px; border-top:1px solid rgba(255,255,255,0.1); color:#8892b0; }
-        footer p { margin:12px 0; font-size:15px; }
-        .contact { color:#00d4ff; text-decoration:none; font-weight:500; transition:all 0.3s ease; }
-        .contact:hover { text-decoration:underline; color:#2a9d8f; }
+.card h2{
+font-size:26px;
+margin-bottom:20px;
+color:#00d4ff;
+}
 
-        @media (max-width:768px) {
-            header h1{font-size:36px;}
-            .version{font-size:48px;}
-            .card{padding:25px;}
-            .steps li{padding-left:60px;}
-            .steps li::before{width:40px;height:40px;font-size:16px;}
-        }
-    </style>
+.version-box{
+text-align:center;
+padding:50px 30px;
+background:linear-gradient(135deg,rgba(0,119,182,0.1),rgba(42,157,143,0.1));
+}
+
+.version{
+font-size:70px;
+font-weight:800;
+background:linear-gradient(135deg,#00d4ff,#2a9d8f);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+margin-bottom:10px;
+}
+
+.date{
+color:#8892b0;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:18px 40px;
+border-radius:12px;
+text-decoration:none;
+font-weight:700;
+font-size:18px;
+cursor:pointer;
+border:none;
+}
+
+.btn-primary{
+background:linear-gradient(135deg,#0077b6,#00d4ff);
+color:white;
+}
+
+.btn-secondary{
+background:rgba(255,255,255,0.1);
+color:white;
+border:1px solid rgba(255,255,255,0.2);
+width:100%;
+margin-bottom:12px;
+}
+
+.features{
+list-style:none;
+}
+
+.features li{
+padding:15px 0;
+border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.steps{
+padding-left:20px;
+}
+
+footer{
+text-align:center;
+margin-top:60px;
+color:#8892b0;
+}
+
+.contact{
+color:#00d4ff;
+text-decoration:none;
+}
+
+</style>
+
 </head>
+
 <body>
+
 <div class="container">
-    <header>
-        <div class="logo">🔐</div>
-        <h1>Secure Vault</h1>
-        <p>Official Update Center</p>
-    </header>
 
-    <!-- Latest Release -->
-    <div class="card version-box">
-        <h2>🚀 Latest Release</h2>
-        <div class="version" id="current-version">v1.0.0</div>
-        <div class="date">Released: March 7, 2025</div>
+<header>
+<div class="logo">🔐</div>
+<h1>Secure Vault</h1>
+<p>Official Update Center</p>
+</header>
 
-        <button class="btn btn-primary" onclick="openPlatformSelect()">⬇ Download Latest Version</button>
+<div class="card version-box">
 
-        <div class="status-box">
-            <div class="status-online">
-                <div class="pulse"></div>
-                Server Online — Updates Available
-            </div>
-        </div>
-    </div>
+<h2>Latest Release</h2>
 
-    <!-- What's New -->
-    <div class="card">
-        <h2>✨ What's New</h2>
-        <ul class="features">
-            <li><span class="feature-icon">🎨</span> Modern, clean interface with smooth animations</li>
-            <li><span class="feature-icon">🔢</span> Secure PIN pad login system</li>
-            <li><span class="feature-icon">🗄️</span> Three vault categories: Apps, Photos, Videos</li>
-            <li><span class="feature-icon">➕</span> Easy add/remove items with file browser</li>
-            <li><span class="feature-icon">⚙️</span> Settings panel with code change option</li>
-            <li><span class="feature-icon">🔄</span> Built-in update checker</li>
-        </ul>
-    </div>
-
-    <!-- How to Update -->
-    <div class="card">
-        <h2>📥 How to Update</h2>
-        <ol class="steps">
-            <li>Click the <strong>Download Latest Version</strong> button above</li>
-            <li>Close your current Secure Vault application completely</li>
-            <li>Replace your old file with the new downloaded <strong>.exe</strong> (Windows) or <strong>.apk</strong> (Android)</li>
-            <li>Your vault data (<code>vault_data.json</code>) will be preserved automatically</li>
-            <li>Launch the new version and enter your 6-digit code</li>
-        </ol>
-    </div>
-
-    <!-- Version History -->
-    <div class="card">
-        <h2>📋 Version History</h2>
-        <table class="versions-table">
-            <tr><th>Version</th><th>Release Date</th><th>Download</th></tr>
-            <tr><td><strong>v1.0.0</strong></td><td style="color:#8892b0;">March 7, 2025</td>
-            <td>
-                <a href="SecureVault.exe" download>Windows ↓</a>
-                <a href="SecureVault.apk" download style="margin-left:10px;">Android ↓</a>
-            </td></tr>
-        </table>
-    </div>
-
-    <!-- System Requirements -->
-    <div class="card">
-        <h2>💻 System Requirements</h2>
-        <ul class="features">
-            <li><span class="feature-icon">🪟</span> Windows 10/11 or Android 6.0+</li>
-            <li><span class="feature-icon">💾</span> 50 MB free disk space</li>
-            <li><span class="feature-icon">🌐</span> Internet connection (for updates only)</li>
-        </ul>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>Need help? Contact us at <a href="mailto:support@securevault.app" class="contact">charmphy170@gmail.com</a></p>
-        <p>&copy; 2025 Secure Vault. All rights reserved.</p>
-        <p style="font-size:13px;margin-top:20px;">Made with 🔒 security in mind</p>
-    </footer>
+<div class="version" id="current-version">
+v1.0.0
 </div>
 
-<!-- Platform Selection Popup -->
+<div class="date">
+Released: March 7, 2025
+</div>
+
+<button class="btn btn-primary" onclick="openPlatformSelect()">
+⬇ Download Latest Version
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>What's New</h2>
+
+<ul class="features">
+
+<li>Modern clean interface</li>
+<li>Secure PIN vault login</li>
+<li>App / Photo / Video vault</li>
+<li>Easy file adding system</li>
+<li>Settings panel</li>
+<li>Built-in update checker</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>How to Update</h2>
+
+<ol class="steps">
+
+<li>Click Download Latest Version</li>
+<li>Choose your platform</li>
+<li>Install the downloaded file</li>
+<li>Your vault data stays safe</li>
+
+</ol>
+
+</div>
+
+<div class="card">
+
+<h2>Version History</h2>
+
+<table style="width:100%;">
+
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Downloads</th>
+</tr>
+
+<tr>
+
+<td>v1.0.0</td>
+
+<td>March 7 2025</td>
+
+<td>
+
+<a href="SecureVault.exe" download>Windows</a> | <a href="SecureVault.apk" download>Android</a>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<div class="card">
+
+<h2>System Requirements</h2>
+
+<ul class="features">
+
+<li>Windows 10 / 11</li>
+<li>Android 6.0+</li>
+<li>50MB free storage</li>
+
+</ul>
+
+</div>
+
+<footer>
+
+<p>
+Need help? Contact
+<a href="mailto:charmphy170@gmail.com" class="contact">
+charmphy170@gmail.com
+</a>
+</p>
+
+<p>
+© 2025 Secure Vault
+</p>
+
+</footer>
+
+</div>
+
 <div id="platformPopup" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);display:none;align-items:center;justify-content:center;z-index:9999;">
-    <div style="background:#1a1a2e;padding:40px;border-radius:20px;text-align:center;max-width:400px;width:90%;border:1px solid rgba(255,255,255,0.1);">
-        <h2 style="margin-bottom:25px;">Select Your Platform</h2>
-        <button onclick="downloadWindows()" class="btn btn-secondary" style="width:100%; margin-bottom:15px;">🪟 Windows (.exe)</button>
-        <button onclick="downloadAndroid()" class="btn btn-secondary" style="width:100%;">📱 Android (.apk)</button>
-        <br><br>
-        <button onclick="closePopup()" style="background:none;border:none;color:#aaa;cursor:pointer;margin-top:10px;">Cancel</button>
-    </div>
+
+<div style="background:#1a1a2e;padding:40px;border-radius:20px;text-align:center;max-width:400px;width:90%;">
+
+<h2 style="margin-bottom:20px;">Select Platform</h2>
+
+<button onclick="downloadWindows()" class="btn btn-secondary">
+Windows (.exe)
+</button>
+
+<button onclick="downloadAndroid()" class="btn btn-secondary">
+Android (.apk)
+</button>
+
+<button onclick="comingSoon()" class="btn btn-secondary">
+Mac (Coming Soon)
+</button>
+
+<button onclick="comingSoon()" class="btn btn-secondary">
+iPhone / iPad (Coming Soon)
+</button>
+
+<button onclick="closePopup()" style="background:none;border:none;color:#aaa;margin-top:15px;">
+Cancel
+</button>
+
+</div>
+
 </div>
 
 <script>
-    // Auto-fetch version
-    fetch('version.txt')
-        .then(response => response.text())
-        .then(version => { document.getElementById('current-version').textContent = 'v' + version.trim(); })
-        .catch(() => { console.log('Using default version 1.0.0'); });
 
-    // Platform popup
-    function openPlatformSelect(){ document.getElementById("platformPopup").style.display="flex"; }
-    function closePopup(){ document.getElementById("platformPopup").style.display="none"; }
-    function downloadWindows(){ window.location.href="SecureVault.exe"; }
-    function downloadAndroid(){ window.location.href="SecureVault.apk"; }
+function openPlatformSelect(){
+document.getElementById("platformPopup").style.display="flex";
+}
+
+function closePopup(){
+document.getElementById("platformPopup").style.display="none";
+}
+
+function downloadWindows(){
+window.location.href="SecureVault.exe";
+}
+
+function downloadAndroid(){
+window.location.href="SecureVault.apk";
+}
+
+function comingSoon(){
+alert("Apple versions are coming soon!");
+}
+
+fetch('version.txt')
+.then(r=>r.text())
+.then(v=>{
+document.getElementById("current-version").textContent="v"+v.trim();
+})
+.catch(()=>{});
+
 </script>
+
 </body>
 </html>
